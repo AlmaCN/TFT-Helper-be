@@ -15,5 +15,5 @@ public class FirstMatchDTOIn {
     private int lpMatch;
     private String compName;
     private String playerName;
-    
+
 }
