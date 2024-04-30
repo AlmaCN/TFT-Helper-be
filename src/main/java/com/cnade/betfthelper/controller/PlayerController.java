@@ -1,10 +1,9 @@
 package com.cnade.betfthelper.controller;
 
-import com.cnade.betfthelper.command.CreatePlayerCommand;
-import com.cnade.betfthelper.command.GetPlayerByIdWithCompsCommand;
-import com.cnade.betfthelper.command.GetPlayerMatchCompCommand;
-import com.cnade.betfthelper.command.ValidateNameCommand;
+import com.cnade.betfthelper.command.*;
 import com.cnade.betfthelper.entity.dto.PlayerDTOIn;
+import com.cnade.betfthelper.entity.model.Player;
+import com.cnade.betfthelper.entity.resource.PlayerAllResource;
 import com.cnade.betfthelper.entity.resource.PlayerMatchCompResource;
 import com.cnade.betfthelper.entity.resource.PlayerResource;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/player")
@@ -66,6 +67,12 @@ public class PlayerController {
     public ResponseEntity<String> validateName(@RequestParam String playerName) {
         String result = beanFactory.getBean(ValidateNameCommand.class, playerName).doExecute();
         return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/get-all")
+    public ResponseEntity<List<PlayerAllResource>> getAll() {
+        List<PlayerAllResource> players = beanFactory.getBean(PlayerGetAllCommand.class).doExecute();
+        return ResponseEntity.ok(players);
     }
 
 }

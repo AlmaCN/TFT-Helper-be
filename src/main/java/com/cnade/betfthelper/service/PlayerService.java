@@ -9,6 +9,7 @@ import com.cnade.betfthelper.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -55,6 +56,10 @@ public class PlayerService {
     public boolean findName(String name) {
         Optional<Player> optionalPlayer = playerRepository.findByPlayerName(name);
         return optionalPlayer.isPresent();
+    }
+
+    public List<Player> getAll() {
+        return playerRepository.findAll();
     }
 
 }
