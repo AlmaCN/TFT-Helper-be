@@ -2,7 +2,6 @@ package com.cnade.betfthelper.controller;
 
 import com.cnade.betfthelper.command.*;
 import com.cnade.betfthelper.entity.dto.PlayerDTOIn;
-import com.cnade.betfthelper.entity.model.Player;
 import com.cnade.betfthelper.entity.resource.PlayerAllResource;
 import com.cnade.betfthelper.entity.resource.PlayerMatchCompResource;
 import com.cnade.betfthelper.entity.resource.PlayerResource;

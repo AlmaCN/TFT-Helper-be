@@ -1,6 +1,5 @@
 package com.cnade.betfthelper.command;
 
-import com.cnade.betfthelper.entity.model.Comp;
 import com.cnade.betfthelper.entity.model.Match;
 import com.cnade.betfthelper.entity.model.Player;
 import com.cnade.betfthelper.entity.resource.MatchResource;

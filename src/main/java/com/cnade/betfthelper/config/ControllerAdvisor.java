@@ -14,7 +14,7 @@ import java.util.Map;
 public class ControllerAdvisor {
 
     @ExceptionHandler(CustomException.class)
-    public ResponseEntity<Object> handleSquadraException(CustomException ex) {
+    public ResponseEntity<Object> handleException(CustomException ex) {
         Map<String, Object> body = new LinkedHashMap<>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formatDateTime = LocalDateTime.now().format(formatter);

@@ -32,6 +32,7 @@ public class CreateMatchCommand {
 
     public LeagueResource doExecute() {
         Player player = playerService.findByPlayerName(matchDTOIn.getPlayerName());
+        int matchCounter = player.getMatchCounter() + 1;
         int lp;
         String league = player.getLeague();
         int tier = player.getLeagueTier();
@@ -64,7 +65,10 @@ public class CreateMatchCommand {
                     default -> league;
                 };
             }
-        }
+
+//        } else {
+//
+        } //TODO FIX LP ALGORITHM
 
         if(player.getLpPlayer() == 0 && !matchDTOIn.isVictory()) {
             if(tier != 0) {
@@ -72,6 +76,7 @@ public class CreateMatchCommand {
             }
         }
 
+        player.setMatchCounter(matchCounter);
         player.setLeague(league);
         player.setLpPlayer(lp);
         player.setLeagueTier(tier);

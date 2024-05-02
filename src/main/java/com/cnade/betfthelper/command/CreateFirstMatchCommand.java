@@ -1,7 +1,6 @@
 package com.cnade.betfthelper.command;
 
 import com.cnade.betfthelper.entity.dto.FirstMatchDTOIn;
-import com.cnade.betfthelper.entity.dto.MatchDTOIn;
 import com.cnade.betfthelper.entity.model.Comp;
 import com.cnade.betfthelper.entity.model.Match;
 import com.cnade.betfthelper.entity.model.Player;
@@ -33,8 +32,6 @@ public class CreateFirstMatchCommand {
 
     public LeagueResource doExecute() {
         Player player = playerService.findByPlayerName(firstMatchDTOIn.getPlayerName());
-        String league = player.getLeague();
-        int tier = player.getLeagueTier();
         Comp comp = compService.findByCompName(firstMatchDTOIn.getCompName());
         int winsNumber = comp.getWins();
         if(firstMatchDTOIn.isVictory()) {

@@ -8,10 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PlayerAllResource {
-    private Integer playerId;
     private String playerName;
-    private String league;
-    private int leagueTier;
-    private int lpPlayer;
     private int matchCounter;
+    private int comps;
+    private int wins;
+    private int losses;
 }

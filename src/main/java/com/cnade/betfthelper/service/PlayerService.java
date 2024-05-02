@@ -3,7 +3,6 @@ package com.cnade.betfthelper.service;
 import com.cnade.betfthelper.entity.dto.PlayerDTOIn;
 import com.cnade.betfthelper.entity.model.Player;
 import com.cnade.betfthelper.exception.PlayerAlreadyPresentException;
-import com.cnade.betfthelper.exception.PlayerNameAlreadyTaken;
 import com.cnade.betfthelper.exception.PlayerNotFoundException;
 import com.cnade.betfthelper.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;

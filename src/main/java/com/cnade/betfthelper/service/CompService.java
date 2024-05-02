@@ -2,14 +2,11 @@ package com.cnade.betfthelper.service;
 
 import com.cnade.betfthelper.entity.dto.GetAllCompsDTO;
 import com.cnade.betfthelper.entity.model.Comp;
-import com.cnade.betfthelper.entity.resource.CompResource;
 import com.cnade.betfthelper.exception.CompNotFoundException;
-import com.cnade.betfthelper.mapper.CompMapper;
 import com.cnade.betfthelper.repository.CompRepository;
 import com.cnade.betfthelper.repository.specification.CompSpecifications;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -34,6 +31,10 @@ public class CompService {
     public Page<Comp> getAllComps(GetAllCompsDTO dto, Pageable pageable) {
         Specification<Comp> spec = CompSpecifications.buildForComp(dto);
         return compRepository.findAll(spec, pageable);
+    }
+
+    public List<Comp> getAll(String name) {
+        return compRepository.findByPlayer_PlayerName(name);
     }
 
     public Comp findByCompName(String compName) {

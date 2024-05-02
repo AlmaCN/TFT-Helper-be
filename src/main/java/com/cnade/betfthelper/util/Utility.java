@@ -6,15 +6,15 @@ import java.util.List;
 
 public class Utility {
 
-    public static Specification equalsSpecification(String campo, String valore) {
-        return (root, query, cb) -> cb.equal(root.get(campo), valore);
+    public static Specification equalsSpecification(String campo, String value) {
+        return (root, query, cb) -> cb.equal(root.get(campo), value);
     }
-    public static Specification equalsSpecification(String campoId, String campo, Object valore) {
-        return (root, query, cb) -> cb.equal(root.get(campoId).get(campo), valore);
+    public static Specification equalsSpecification(String campoId, String campo, Object value) {
+        return (root, query, cb) -> cb.equal(root.get(campoId).get(campo), value);
     }
 
-    public static Specification betweenSpecification(String campo, String valore1, String valore2) {
-        return (root, query, cb) -> cb.between(root.get(campo), valore1, valore2);
+    public static Specification betweenSpecification(String campo, String value1, String value2) {
+        return (root, query, cb) -> cb.between(root.get(campo), value1, value2);
     }
 
     public static Specification inSpecification(String campo, List<String> list) {
