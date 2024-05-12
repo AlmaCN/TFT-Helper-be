@@ -47,6 +47,7 @@ public class GetPlayerMatchCompCommand {
         PlayerMatchCompResource pmcr = new PlayerMatchCompResource();
         pmcr.setPlayerName(player.getPlayerName());
         pmcr.setLeague(player.getLeague());
+        pmcr.setTier(player.getLeagueTier());
         pmcr.setLpPlayer(player.getLpPlayer());
         pmcr.setMatches(matchResources);
 

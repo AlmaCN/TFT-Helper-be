@@ -12,6 +12,7 @@ import java.util.List;
 public class PlayerMatchCompResource {
     private String playerName;
     private String league;
+    private int tier;
     private int lpPlayer;
     private List<MatchResource> matches;
 }
